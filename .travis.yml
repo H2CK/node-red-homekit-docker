@@ -46,13 +46,13 @@ install: true
 
 before_script:
   # Set TARGET Docker Repo
-  # default TARGET = raymondmm/node-red-homekit-dev
-  # if TRAVIS_TAG starts with a `v` and only contains numbers, dots and/or dash then TARGET = raymondmm/node-red-homekit
+  # default TARGET = dtjs48jkt/node-red-homekit-dev
+  # if TRAVIS_TAG starts with a `v` and only contains numbers, dots and/or dash then TARGET = dtjs48jkt/node-red-homekit
   - >
-    export TARGET=raymondmm/node-red-homekit-dev
+    export TARGET=dtjs48jkt/node-red-homekit-dev
 
     if [[ "${TRAVIS_TAG}" =~ ^v[0-9\.-]*$ ]]; then
-      export TARGET=raymondmm/node-red-homekit
+      export TARGET=dtjs48jkt/node-red-homekit
     fi
 
   # Set NODE_RED_VERSION from package.json
