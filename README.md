@@ -1,10 +1,13 @@
 # Node-RED-homekit-docker
-[![Greenkeeper badge](https://badges.greenkeeper.io/RaymondMouthaan/node-red-homekit-docker.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/RaymondMouthaan/node-red-homekit-docker.svg?branch=master)](https://travis-ci.org/RaymondMouthaan/node-red-homekit-docker)
-[![DockerHub Pull](https://img.shields.io/docker/pulls/raymondmm/node-red-homekit.svg)](https://hub.docker.com/r/raymondmm/node-red-homekit/)
-[![DockerHub Star](https://img.shields.io/docker/stars/raymondmm/node-red-homekit.svg?maxAge=2592000)](https://hub.docker.com/r/raymondmm/node-red-homekit/)
+[![Build Status](https://travis-ci.org/H2CK/node-red-homekit-docker.svg?branch=master)](https://travis-ci.org/H2CK/node-red-homekit-docker)
+[![DockerHub Pull](https://img.shields.io/docker/pulls/dtjs48jkt/node-red-homekit.svg)](https://hub.docker.com/r/dtjs48jkt/node-red-homekit/)
+[![DockerHub Star](https://img.shields.io/docker/stars/dtjs48jkt/node-red-homekit.svg?maxAge=2592000)](https://hub.docker.com/r/dtjs48jkt/node-red-homekit/)
 
 Node-red-homekit-docker is a Node-RED based project with support for homekit. It is based on the [official Node-RED Docker](https://hub.docker.com/r/nodered/node-red) images with the necessary tools and npm module [node-red-contrib-homekit-bridged](https://www.npmjs.com/package/node-red-contrib-homekit-bridged) installed to run homekit within a docker container. 
+
+This image is based on raymondmm/node-red-homekit. But extends the features to allow
+- the usage of ip camera togehter with homekit (ffmpeg is therefore installed)
+- usage of OIDC authenticationn for NodeRED editor and dashboard
 
 ## Architecture
 Node-red-homekit-docker is supported by manifest list, which means one doesn't need to specify the tag for a specific architecture. Using the image without any tag or the latest tag, will pull the right image for the architecture required.

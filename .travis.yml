@@ -1,10 +1,8 @@
-sudo: required
-
 dist: xenial
 
 services: docker
 
-language: bash
+language: shell
 
 env:
   global:
@@ -12,7 +10,7 @@ env:
     - S6_VERSION=v1.22.1.0
     - DOCKER_FILE=Dockerfile.alpine
 
-  matrix:
+  jobs:
     ### Node JS 10 #####################################################################################################
     # Default Images
     - NODE_VERSION=10 TAG_SUFFIX=default QEMU_ARCH=x86_64  ARCH=amd64   S6_ARCH=amd64
@@ -46,13 +44,13 @@ install: true
 
 before_script:
   # Set TARGET Docker Repo
-  # default TARGET = raymondmm/node-red-homekit-dev
-  # if TRAVIS_TAG starts with a `v` and only contains numbers, dots and/or dash then TARGET = raymondmm/node-red-homekit
+  # default TARGET = dtjs48jkt/node-red-homekit-dev
+  # if TRAVIS_TAG starts with a `v` and only contains numbers, dots and/or dash then TARGET = dtjs48jkt/node-red-homekit
   - >
-    export TARGET=raymondmm/node-red-homekit-dev
+    export TARGET=dtjs48jkt/node-red-homekit-dev
 
     if [[ "${TRAVIS_TAG}" =~ ^v[0-9\.-]*$ ]]; then
-      export TARGET=raymondmm/node-red-homekit
+      export TARGET=dtjs48jkt/node-red-homekit
     fi
 
   # Set NODE_RED_VERSION from package.json
